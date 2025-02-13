@@ -9,11 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private lazy var myView: View = {
+        let view = View()
+        view.delegate = self
+        return view
+    }()
+
+    override func loadView() {
+        super.loadView()
+        self.view = myView
+        
     }
 
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        myView.setup(labelText: "APOD", buttonTitle: "TROCAR DATA")
+    }
 }
 
+extension ViewController: ViewDelegate {
+    func didTapButton() {
+        print("DATA TROCADA")
+    }
+}
