@@ -11,7 +11,7 @@ protocol ViewDelegate: AnyObject {
     func didTapButton()
 }
 
-class View: UIView {
+class APODScreenView: UIView {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +47,7 @@ class View: UIView {
     }
 }
 
-extension View: ViewCode {
+extension APODScreenView: ViewCode {
     func addSubviews() {
         addSubview(label)
         addSubview(button)

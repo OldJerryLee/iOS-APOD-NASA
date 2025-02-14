@@ -9,23 +9,45 @@
 /* Begin PBXBuildFile section */
 		611A33D62D5E5F7600D19A53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33D52D5E5F7600D19A53 /* AppDelegate.swift */; };
 		611A33D82D5E5F7600D19A53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33D72D5E5F7600D19A53 /* SceneDelegate.swift */; };
-		611A33DA2D5E5F7600D19A53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33D92D5E5F7600D19A53 /* ViewController.swift */; };
+		611A33DA2D5E5F7600D19A53 /* APODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33D92D5E5F7600D19A53 /* APODViewController.swift */; };
 		611A33DF2D5E5F7900D19A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611A33DE2D5E5F7900D19A53 /* Assets.xcassets */; };
 		611A33E22D5E5F7900D19A53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611A33E02D5E5F7900D19A53 /* LaunchScreen.storyboard */; };
 		611A33EA2D5E673300D19A53 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33E92D5E673300D19A53 /* ViewCode.swift */; };
-		611A33EC2D5E68BD00D19A53 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33EB2D5E68BD00D19A53 /* View.swift */; };
+		611A33EC2D5E68BD00D19A53 /* APODScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33EB2D5E68BD00D19A53 /* APODScreenView.swift */; };
+		611A33EF2D5E72E600D19A53 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33EE2D5E72E600D19A53 /* RequestBuilder.swift */; };
+		611A33F12D5E731700D19A53 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33F02D5E731700D19A53 /* Endpoint.swift */; };
+		611A33F32D5E734600D19A53 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33F22D5E734600D19A53 /* HTTPMethod.swift */; };
+		611A33F52D5E737800D19A53 /* DefaultRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33F42D5E737800D19A53 /* DefaultRequestBuilder.swift */; };
+		611A33F72D5E73A900D19A53 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33F62D5E73A900D19A53 /* NetworkLogger.swift */; };
+		611A33F92D5E73D500D19A53 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33F82D5E73D500D19A53 /* NetworkError.swift */; };
+		611A33FB2D5E73FD00D19A53 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33FA2D5E73FD00D19A53 /* NetworkLayer.swift */; };
+		611A33FD2D5E742300D19A53 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33FC2D5E742300D19A53 /* ServiceManager.swift */; };
+		611A34002D5E751500D19A53 /* APODResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33FF2D5E751500D19A53 /* APODResponse.swift */; };
+		611A34042D5FAED700D19A53 /* APODService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A34032D5FAED700D19A53 /* APODService.swift */; };
+		611A340B2D5FB04200D19A53 /* APODViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A340A2D5FB04200D19A53 /* APODViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		611A33D22D5E5F7600D19A53 /* APOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		611A33D52D5E5F7600D19A53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		611A33D72D5E5F7600D19A53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		611A33D92D5E5F7600D19A53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		611A33D92D5E5F7600D19A53 /* APODViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODViewController.swift; sourceTree = "<group>"; };
 		611A33DE2D5E5F7900D19A53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		611A33E12D5E5F7900D19A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		611A33E32D5E5F7900D19A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		611A33E92D5E673300D19A53 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
-		611A33EB2D5E68BD00D19A53 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		611A33EB2D5E68BD00D19A53 /* APODScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODScreenView.swift; sourceTree = "<group>"; };
+		611A33EE2D5E72E600D19A53 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		611A33F02D5E731700D19A53 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		611A33F22D5E734600D19A53 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		611A33F42D5E737800D19A53 /* DefaultRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRequestBuilder.swift; sourceTree = "<group>"; };
+		611A33F62D5E73A900D19A53 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		611A33F82D5E73D500D19A53 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		611A33FA2D5E73FD00D19A53 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		611A33FC2D5E742300D19A53 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		611A33FF2D5E751500D19A53 /* APODResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODResponse.swift; sourceTree = "<group>"; };
+		611A34032D5FAED700D19A53 /* APODService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService.swift; sourceTree = "<group>"; };
+		611A340A2D5FB04200D19A53 /* APODViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +80,91 @@
 		611A33D42D5E5F7600D19A53 /* APOD */ = {
 			isa = PBXGroup;
 			children = (
+				611A34092D5FAF9500D19A53 /* Utils */,
+				611A34012D5E77DE00D19A53 /* APODScreen */,
+				611A33FE2D5E74F000D19A53 /* Model */,
+				611A33ED2D5E726400D19A53 /* Service */,
 				611A33D52D5E5F7600D19A53 /* AppDelegate.swift */,
 				611A33D72D5E5F7600D19A53 /* SceneDelegate.swift */,
-				611A33D92D5E5F7600D19A53 /* ViewController.swift */,
 				611A33DE2D5E5F7900D19A53 /* Assets.xcassets */,
 				611A33E02D5E5F7900D19A53 /* LaunchScreen.storyboard */,
 				611A33E32D5E5F7900D19A53 /* Info.plist */,
-				611A33E92D5E673300D19A53 /* ViewCode.swift */,
-				611A33EB2D5E68BD00D19A53 /* View.swift */,
 			);
 			path = APOD;
+			sourceTree = "<group>";
+		};
+		611A33ED2D5E726400D19A53 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				611A33EE2D5E72E600D19A53 /* RequestBuilder.swift */,
+				611A33F02D5E731700D19A53 /* Endpoint.swift */,
+				611A33F22D5E734600D19A53 /* HTTPMethod.swift */,
+				611A33F42D5E737800D19A53 /* DefaultRequestBuilder.swift */,
+				611A33F62D5E73A900D19A53 /* NetworkLogger.swift */,
+				611A33F82D5E73D500D19A53 /* NetworkError.swift */,
+				611A33FA2D5E73FD00D19A53 /* NetworkLayer.swift */,
+				611A33FC2D5E742300D19A53 /* ServiceManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		611A33FE2D5E74F000D19A53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				611A33FF2D5E751500D19A53 /* APODResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		611A34012D5E77DE00D19A53 /* APODScreen */ = {
+			isa = PBXGroup;
+			children = (
+				611A34082D5FAF8100D19A53 /* ViewController */,
+				611A34072D5FAF7700D19A53 /* View */,
+				611A34062D5FAF6A00D19A53 /* ViewModel */,
+				611A34052D5FAF6100D19A53 /* Service */,
+				611A34032D5FAED700D19A53 /* APODService.swift */,
+			);
+			path = APODScreen;
+			sourceTree = "<group>";
+		};
+		611A34052D5FAF6100D19A53 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		611A34062D5FAF6A00D19A53 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				611A340A2D5FB04200D19A53 /* APODViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		611A34072D5FAF7700D19A53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				611A33EB2D5E68BD00D19A53 /* APODScreenView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		611A34082D5FAF8100D19A53 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				611A33D92D5E5F7600D19A53 /* APODViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		611A34092D5FAF9500D19A53 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				611A33E92D5E673300D19A53 /* ViewCode.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,10 +237,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				611A33DA2D5E5F7600D19A53 /* ViewController.swift in Sources */,
+				611A33FB2D5E73FD00D19A53 /* NetworkLayer.swift in Sources */,
+				611A33F72D5E73A900D19A53 /* NetworkLogger.swift in Sources */,
+				611A34042D5FAED700D19A53 /* APODService.swift in Sources */,
+				611A34002D5E751500D19A53 /* APODResponse.swift in Sources */,
+				611A33F12D5E731700D19A53 /* Endpoint.swift in Sources */,
+				611A33DA2D5E5F7600D19A53 /* APODViewController.swift in Sources */,
+				611A33FD2D5E742300D19A53 /* ServiceManager.swift in Sources */,
 				611A33D62D5E5F7600D19A53 /* AppDelegate.swift in Sources */,
-				611A33EC2D5E68BD00D19A53 /* View.swift in Sources */,
+				611A33EC2D5E68BD00D19A53 /* APODScreenView.swift in Sources */,
+				611A33F32D5E734600D19A53 /* HTTPMethod.swift in Sources */,
+				611A33F52D5E737800D19A53 /* DefaultRequestBuilder.swift in Sources */,
+				611A33EF2D5E72E600D19A53 /* RequestBuilder.swift in Sources */,
 				611A33D82D5E5F7600D19A53 /* SceneDelegate.swift in Sources */,
+				611A33F92D5E73D500D19A53 /* NetworkError.swift in Sources */,
+				611A340B2D5FB04200D19A53 /* APODViewModel.swift in Sources */,
 				611A33EA2D5E673300D19A53 /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
