@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         //let navigationController = UINavigationController(rootViewController: APODViewController())
 
-        self.window?.rootViewController = APODViewController()
+        self.window?.rootViewController = APODTabBarController()
         self.window?.makeKeyAndVisible()
     }
 

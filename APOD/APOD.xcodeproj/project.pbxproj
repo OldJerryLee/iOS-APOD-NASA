@@ -25,6 +25,7 @@
 		611A34002D5E751500D19A53 /* APODResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A33FF2D5E751500D19A53 /* APODResponse.swift */; };
 		611A34042D5FAED700D19A53 /* APODService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A34032D5FAED700D19A53 /* APODService.swift */; };
 		611A340B2D5FB04200D19A53 /* APODViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A340A2D5FB04200D19A53 /* APODViewModel.swift */; };
+		611A34102D60BE6800D19A53 /* APODTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A340F2D60BE6800D19A53 /* APODTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		611A33FF2D5E751500D19A53 /* APODResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODResponse.swift; sourceTree = "<group>"; };
 		611A34032D5FAED700D19A53 /* APODService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService.swift; sourceTree = "<group>"; };
 		611A340A2D5FB04200D19A53 /* APODViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODViewModel.swift; sourceTree = "<group>"; };
+		611A340F2D60BE6800D19A53 /* APODTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				611A33E92D5E673300D19A53 /* ViewCode.swift */,
+				611A340F2D60BE6800D19A53 /* APODTabBarController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				611A33EF2D5E72E600D19A53 /* RequestBuilder.swift in Sources */,
 				611A33D82D5E5F7600D19A53 /* SceneDelegate.swift in Sources */,
 				611A33F92D5E73D500D19A53 /* NetworkError.swift in Sources */,
+				611A34102D60BE6800D19A53 /* APODTabBarController.swift in Sources */,
 				611A340B2D5FB04200D19A53 /* APODViewModel.swift in Sources */,
 				611A33EA2D5E673300D19A53 /* ViewCode.swift in Sources */,
 			);
