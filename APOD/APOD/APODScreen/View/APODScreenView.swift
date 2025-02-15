@@ -40,7 +40,7 @@ class APODScreenView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .apodLetters
-        label.text = "In the Core of the Carina Nebula"
+        label.text = "Template"
         label.numberOfLines = 1
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         return label
@@ -50,7 +50,7 @@ class APODScreenView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .apodLetters
-        label.text = "14/02/2025"
+        label.text = "xx/xx/xxxx"
         label.numberOfLines = 1
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -70,10 +70,14 @@ class APODScreenView: UIView {
     
     private lazy var APODImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .center
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(systemName: "camera.fill")
+        imageView.tintColor = .apodLetters
         return imageView
     }()
+    
+    private var loadingView: LoadingView?
     
     weak var delegate: APODScreenViewDelegate?
     
@@ -97,6 +101,7 @@ class APODScreenView: UIView {
     }
     
     func setupImage(image: UIImage) {
+        self.APODImageView.contentMode = .scaleAspectFill
         self.APODImageView.image = image
     }
     
@@ -106,6 +111,40 @@ class APODScreenView: UIView {
     
     @objc private func didTapFavoriteButton() {
         delegate?.didTapFavoriteButton()
+    }
+    
+    func startPlaceholder() {
+        self.titleLabel.textColor = .clear
+        self.dateLabel.textColor = .clear
+        self.descriptionLabel.textColor = .clear
+        
+        self.titleLabel.backgroundColor = .templateGray
+        self.dateLabel.backgroundColor = .templateGray
+        self.descriptionLabel.backgroundColor = .templateGray
+    }
+    
+    func stopPlaceholder() {
+        self.titleLabel.textColor = .apodLetters
+        self.dateLabel.textColor = .apodLetters
+        self.descriptionLabel.textColor = .apodLetters
+        
+        self.titleLabel.backgroundColor = .clear
+        self.dateLabel.backgroundColor = .clear
+        self.descriptionLabel.backgroundColor = .clear
+    }
+    
+    func showLoading() {
+        guard loadingView == nil else { return }
+
+        let loading = LoadingView()
+        addSubview(loading)
+
+        loadingView = loading
+    }
+    
+    func hideLoading() {
+        loadingView?.removeFromSuperview()
+        loadingView = nil
     }
 }
 
@@ -139,7 +178,7 @@ extension APODScreenView: ViewCode {
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: self.dateLabel.leadingAnchor),
             
-            APODImageView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor),
+            APODImageView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 8),
             APODImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             APODImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             APODImageView.heightAnchor.constraint(equalToConstant: 400),

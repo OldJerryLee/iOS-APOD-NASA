@@ -22,13 +22,14 @@ class APODViewController: UIViewController {
         super.viewDidLoad()
         self.viewModel.delegate(delegate: self)
         self.APODScreen?.delegate(delegate: self)
+        self.APODScreen?.startPlaceholder()
+        self.APODScreen?.showLoading()
         viewModel.fetchAPOD()
     }
     
     private func downloadImage(from url: URL) {
         let request = URLRequest(url: url)
 
-        // Verifica se a imagem já está no cache
         if let cachedResponse = URLCache.shared.cachedResponse(for: request),
            let image = UIImage(data: cachedResponse.data) {
             DispatchQueue.main.async {
@@ -78,6 +79,9 @@ extension APODViewController: APODViewModelProtocol {
             self?.APODScreen?.setup(titleText: self?.viewModel.APODfetched?.title ?? "",
                                     dateText: self?.viewModel.getFormatedDate(dateString: self?.viewModel.APODfetched?.date ?? "") ?? "",
                                     descriptionText: self?.viewModel.APODfetched?.explanation ?? "")
+            
+            self?.APODScreen?.stopPlaceholder()
+            self?.APODScreen?.hideLoading()
             
             if let url = URL(string: self?.viewModel.APODfetched?.url ?? "") {
                 self?.downloadImage(from: url.absoluteURL)

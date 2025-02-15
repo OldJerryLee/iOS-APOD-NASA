@@ -27,6 +27,7 @@
 		611A340B2D5FB04200D19A53 /* APODViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A340A2D5FB04200D19A53 /* APODViewModel.swift */; };
 		611A34102D60BE6800D19A53 /* APODTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A340F2D60BE6800D19A53 /* APODTabBarController.swift */; };
 		611A34122D60D72B00D19A53 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A34112D60D72B00D19A53 /* String+Extensions.swift */; };
+		611A34162D6107F200D19A53 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A34152D6107F200D19A53 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		611A340A2D5FB04200D19A53 /* APODViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODViewModel.swift; sourceTree = "<group>"; };
 		611A340F2D60BE6800D19A53 /* APODTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODTabBarController.swift; sourceTree = "<group>"; };
 		611A34112D60D72B00D19A53 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		611A34152D6107F200D19A53 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				611A33E92D5E673300D19A53 /* ViewCode.swift */,
 				611A340F2D60BE6800D19A53 /* APODTabBarController.swift */,
 				611A34112D60D72B00D19A53 /* String+Extensions.swift */,
+				611A34152D6107F200D19A53 /* LoadingView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				611A33F92D5E73D500D19A53 /* NetworkError.swift in Sources */,
 				611A34102D60BE6800D19A53 /* APODTabBarController.swift in Sources */,
 				611A340B2D5FB04200D19A53 /* APODViewModel.swift in Sources */,
+				611A34162D6107F200D19A53 /* LoadingView.swift in Sources */,
 				611A33EA2D5E673300D19A53 /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
