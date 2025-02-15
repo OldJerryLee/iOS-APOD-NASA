@@ -20,9 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.window = UIWindow(windowScene: windowScene)
 
-        let navigationController = UINavigationController(rootViewController: APODViewController())
+        //let navigationController = UINavigationController(rootViewController: APODViewController())
 
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = APODViewController()
         self.window?.makeKeyAndVisible()
     }
 
