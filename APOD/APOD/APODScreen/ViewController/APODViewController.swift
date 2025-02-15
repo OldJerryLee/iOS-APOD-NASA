@@ -63,8 +63,12 @@ class APODViewController: UIViewController {
 }
 
 extension APODViewController: ViewDelegate {
-    func didTapButton() {
-        print("DATA TROCADA")
+    func didTapFavoriteButton() {
+        print("FAVORITAR")
+    }
+    
+    func didTapCalendarButton() {
+        print("TROCAR DATA")
     }
 }
 

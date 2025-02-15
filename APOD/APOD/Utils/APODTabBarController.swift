@@ -15,10 +15,10 @@ class APODTabBarController: UITabBarController {
     }
 
     func createSearchNavigationController() -> UINavigationController {
-        let searchVC = APODViewController()
-        searchVC.title = "APOD"
-        searchVC.tabBarItem = UITabBarItem(title: "APOD", image: UIImage(systemName: "camera.fill"), tag: 0)
-        return UINavigationController(rootViewController: searchVC)
+        let APODVC = APODViewController()
+        APODVC.title = "APOD"
+        APODVC.tabBarItem = UITabBarItem(title: "APOD", image: UIImage(systemName: "camera.fill"), tag: 0)
+        return UINavigationController(rootViewController: APODVC)
     }
 
     func createFavoritesNavigationController() -> UINavigationController {

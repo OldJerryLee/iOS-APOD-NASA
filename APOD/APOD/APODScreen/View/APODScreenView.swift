@@ -8,7 +8,8 @@
 import UIKit
 
 protocol ViewDelegate: AnyObject {
-    func didTapButton()
+    func didTapCalendarButton()
+    func didTapFavoriteButton()
 }
 
 class APODScreenView: UIView {
@@ -20,7 +21,7 @@ class APODScreenView: UIView {
         button.setImage(image, for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.tintColor = .apodLetters
-        //button.addTarget(self, action: #selector(self.tappedFiltersButtons), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.didTapCalendarButton), for: .touchUpInside)
         return button
     }()
     
@@ -31,7 +32,7 @@ class APODScreenView: UIView {
         button.setImage(image, for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.tintColor = .apodLetters
-        //button.addTarget(self, action: #selector(self.tappedFiltersButtons), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.didTapFavoriteButton), for: .touchUpInside)
         return button
     }()
     
@@ -41,6 +42,7 @@ class APODScreenView: UIView {
         label.textColor = .apodLetters
         label.text = "In the Core of the Carina Nebula"
         label.numberOfLines = 1
+        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         return label
     }()
     
@@ -51,6 +53,18 @@ class APODScreenView: UIView {
         label.text = "14/02/2025"
         label.numberOfLines = 1
         label.textAlignment = .right
+        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        return label
+    }()
+    
+    private lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .apodLetters
+        label.text = "What's happening in the core of the Carina Nebula?  Stars are forming, dying, and leaving an impressive tapestry of dark dusty filaments.  The entire Carina Nebula, cataloged as NGC 3372, spans over 300 light years and lies about 8,500 light-years away in the constellation of Carina. The nebula is composed predominantly of hydrogen gas, which emits the pervasive red and orange glows seen mostly in the center of this highly detailed featured image.  The blue glow around the edges is created primarily by a trace amount of glowing oxygen. Young and massive stars located in the nebula's center expel dust when they explode in supernovas.  Eta Carinae, the most energetic star in the nebula's center, was one of the brightest stars in the sky in the 1830s, but then faded dramatically.    Your Sky Surprise: What picture did APOD feature on your birthday? (post 1995)"
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 14, weight: .light)
         return label
     }()
     
@@ -61,14 +75,6 @@ class APODScreenView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         //imageView.image = UIImage(systemName: "photo.artframe")
         return imageView
-    }()
-    
-    private lazy var button: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.blue, for: .normal)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        return button
     }()
     
     weak var delegate: ViewDelegate?
@@ -91,8 +97,12 @@ class APODScreenView: UIView {
 //        button.setTitle(buttonTitle, for: .normal)
 //    }
     
-    @objc private func didTapButton() {
-        delegate?.didTapButton()
+    @objc private func didTapCalendarButton() {
+        delegate?.didTapCalendarButton()
+    }
+    
+    @objc private func didTapFavoriteButton() {
+        delegate?.didTapFavoriteButton()
     }
 }
 
@@ -103,7 +113,7 @@ extension APODScreenView: ViewCode {
         addSubview(titleLabel)
         addSubview(dateLabel)
         addSubview(APODImageView)
-        addSubview(button)
+        addSubview(descriptionLabel)
     }
     
     func setupConstraints() {
@@ -119,20 +129,22 @@ extension APODScreenView: ViewCode {
             favoriteButton.heightAnchor.constraint(equalToConstant: 32),
             favoriteButton.widthAnchor.constraint(equalToConstant: 32),
             
-            dateLabel.topAnchor.constraint(equalTo: self.calendarButton.bottomAnchor, constant: 16),
-            dateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            dateLabel.topAnchor.constraint(equalTo: self.calendarButton.bottomAnchor, constant: 8),
+            dateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
             
-            titleLabel.topAnchor.constraint(equalTo: self.calendarButton.bottomAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: self.calendarButton.bottomAnchor, constant: 8),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: self.dateLabel.leadingAnchor),
             
-            APODImageView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16),
-            APODImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            APODImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            APODImageView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor),
+            APODImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            APODImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             APODImageView.heightAnchor.constraint(equalToConstant: 400),
             
-            button.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            button.centerXAnchor.constraint(equalTo: centerXAnchor)
+            descriptionLabel.topAnchor.constraint(equalTo: self.APODImageView.bottomAnchor),
+            descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+            descriptionLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -8)
         ])
     }
     
