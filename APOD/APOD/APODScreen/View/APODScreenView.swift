@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ViewDelegate: AnyObject {
+protocol APODScreenViewDelegate: AnyObject {
     func didTapCalendarButton()
     func didTapFavoriteButton()
 }
@@ -68,16 +68,14 @@ class APODScreenView: UIView {
         return label
     }()
     
-    //private lazy var APODImageView: UIImageView = {
-    lazy var APODImageView: UIImageView = {
+    private lazy var APODImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        //imageView.image = UIImage(systemName: "photo.artframe")
         return imageView
     }()
     
-    weak var delegate: ViewDelegate?
+    weak var delegate: APODScreenViewDelegate?
     
     init() {
         super.init(frame: .zero)
@@ -88,14 +86,19 @@ class APODScreenView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func delegate(delegate: ViewDelegate?) {
+    func delegate(delegate: APODScreenViewDelegate?) {
         self.delegate = delegate
     }
     
-//    func setup(labelText: String, buttonTitle: String) {
-//        titleLabel.text = labelText
-//        button.setTitle(buttonTitle, for: .normal)
-//    }
+    func setup(titleText: String, dateText: String, descriptionText: String) {
+        titleLabel.text = titleText
+        dateLabel.text = dateText
+        descriptionLabel.text = descriptionText
+    }
+    
+    func setupImage(image: UIImage) {
+        self.APODImageView.image = image
+    }
     
     @objc private func didTapCalendarButton() {
         delegate?.didTapCalendarButton()

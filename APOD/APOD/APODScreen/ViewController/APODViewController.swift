@@ -23,10 +23,6 @@ class APODViewController: UIViewController {
         self.viewModel.delegate(delegate: self)
         self.APODScreen?.delegate(delegate: self)
         viewModel.fetchAPOD()
-        
-        if let url = URL(string: "https://apod.nasa.gov/apod/image/2402/Carina_Taylor_960.jpg") {
-            downloadImage(from: url.absoluteURL)
-        }
     }
     
     private func downloadImage(from url: URL) {
@@ -36,33 +32,30 @@ class APODViewController: UIViewController {
         if let cachedResponse = URLCache.shared.cachedResponse(for: request),
            let image = UIImage(data: cachedResponse.data) {
             DispatchQueue.main.async {
-                self.APODScreen?.APODImageView.image = image
+                self.APODScreen?.setupImage(image: image)
             }
             return
         }
 
-        // 🔹 Garante que o placeholder esteja visível antes de iniciar o download
         DispatchQueue.main.async {
-            self.APODScreen?.APODImageView.image = UIImage(systemName: "photo.artframe")
+            self.APODScreen?.setupImage(image: UIImage(systemName: "photo.artframe")!)
         }
 
-        // Faz o download da imagem
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, let response = response, error == nil,
                   let image = UIImage(data: data) else { return }
 
-            // Salva a imagem no cache
             let cachedResponse = CachedURLResponse(response: response, data: data)
             URLCache.shared.storeCachedResponse(cachedResponse, for: request)
 
             DispatchQueue.main.async {
-                self.APODScreen?.APODImageView.image = image
+                self.APODScreen?.setupImage(image: image)
             }
         }.resume()
     }
 }
 
-extension APODViewController: ViewDelegate {
+extension APODViewController: APODScreenViewDelegate {
     func didTapFavoriteButton() {
         print("FAVORITAR")
     }
@@ -82,7 +75,13 @@ extension APODViewController: APODViewModelProtocol {
     
     func success() {
         DispatchQueue.main.async { [weak self] in
-            print(self?.viewModel.APODfetched)
+            self?.APODScreen?.setup(titleText: self?.viewModel.APODfetched?.title ?? "",
+                                    dateText: self?.viewModel.getFormatedDate(dateString: self?.viewModel.APODfetched?.date ?? "") ?? "",
+                                    descriptionText: self?.viewModel.APODfetched?.explanation ?? "")
+            
+            if let url = URL(string: self?.viewModel.APODfetched?.url ?? "") {
+                self?.downloadImage(from: url.absoluteURL)
+            }
         }
     }
 }

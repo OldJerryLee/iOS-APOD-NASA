@@ -35,4 +35,8 @@ final class APODViewModel {
             }
         }
     }
+    
+    public func getFormatedDate(dateString: String) -> String {
+        return dateString.toFormattedDate()
+    }
 }
