@@ -43,6 +43,7 @@ class APODScreenView: UIView {
         label.text = "Template"
         label.numberOfLines = 1
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         return label
     }()
     
@@ -54,6 +55,7 @@ class APODScreenView: UIView {
         label.numberOfLines = 1
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.setContentCompressionResistancePriority(.required, for: .horizontal)
         return label
     }()
     
@@ -181,7 +183,7 @@ extension APODScreenView: ViewCode {
             
             titleLabel.topAnchor.constraint(equalTo: self.calendarButton.bottomAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: self.dateLabel.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: self.dateLabel.leadingAnchor, constant: -8),
             
             APODImageView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 8),
             APODImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),

@@ -93,6 +93,9 @@ extension APODViewController: APODViewModelProtocol {
         let ok = UIAlertAction(title: "Ok", style: .cancel)
         alertController.addAction(ok)
         present(alertController, animated: true)
+        
+        self.APODScreen?.stopPlaceholder()
+        self.APODScreen?.hideLoading()
     }
     
     func success() {
