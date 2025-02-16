@@ -100,7 +100,6 @@ class APODScreenView: UIView {
     }()
     
     private var loadingView: LoadingView?
-    
     weak var delegate: APODScreenViewDelegate?
     
     init() {

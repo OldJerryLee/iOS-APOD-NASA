@@ -28,6 +28,11 @@
 		611A34102D60BE6800D19A53 /* APODTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A340F2D60BE6800D19A53 /* APODTabBarController.swift */; };
 		611A34122D60D72B00D19A53 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A34112D60D72B00D19A53 /* String+Extensions.swift */; };
 		611A34162D6107F200D19A53 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A34152D6107F200D19A53 /* LoadingView.swift */; };
+		615449272D628F9F002A92B6 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615449262D628F9F002A92B6 /* FavoritesViewController.swift */; };
+		615449292D628FCE002A92B6 /* FavoritesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615449282D628FCE002A92B6 /* FavoritesScreenView.swift */; };
+		6154492B2D628FE3002A92B6 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6154492A2D628FE3002A92B6 /* FavoritesViewModel.swift */; };
+		6154492E2D629034002A92B6 /* FavoriteAPODTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6154492D2D629034002A92B6 /* FavoriteAPODTableViewCell.swift */; };
+		615449302D6298C2002A92B6 /* FavoritesTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6154492F2D6298C2002A92B6 /* FavoritesTableViewCellScreen.swift */; };
 		EAF856B35FB370EBD8316D7C /* Pods_APOD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574AA0046AA52F75F2981601 /* Pods_APOD.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +62,11 @@
 		611A340F2D60BE6800D19A53 /* APODTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODTabBarController.swift; sourceTree = "<group>"; };
 		611A34112D60D72B00D19A53 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		611A34152D6107F200D19A53 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		615449262D628F9F002A92B6 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		615449282D628FCE002A92B6 /* FavoritesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScreenView.swift; sourceTree = "<group>"; };
+		6154492A2D628FE3002A92B6 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		6154492D2D629034002A92B6 /* FavoriteAPODTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAPODTableViewCell.swift; sourceTree = "<group>"; };
+		6154492F2D6298C2002A92B6 /* FavoritesTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCellScreen.swift; sourceTree = "<group>"; };
 		93735CB33E99B323E502FE62 /* Pods-APOD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APOD.debug.xcconfig"; path = "Target Support Files/Pods-APOD/Pods-APOD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +112,7 @@
 		611A33D42D5E5F7600D19A53 /* APOD */ = {
 			isa = PBXGroup;
 			children = (
+				615449222D628EC3002A92B6 /* FavoritesScreen */,
 				611A34092D5FAF9500D19A53 /* Utils */,
 				611A34012D5E77DE00D19A53 /* APODScreen */,
 				611A33FE2D5E74F000D19A53 /* Model */,
@@ -145,7 +156,6 @@
 				611A34072D5FAF7700D19A53 /* View */,
 				611A34062D5FAF6A00D19A53 /* ViewModel */,
 				611A34052D5FAF6100D19A53 /* Service */,
-				611A34032D5FAED700D19A53 /* APODService.swift */,
 			);
 			path = APODScreen;
 			sourceTree = "<group>";
@@ -153,6 +163,7 @@
 		611A34052D5FAF6100D19A53 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				611A34032D5FAED700D19A53 /* APODService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -190,6 +201,50 @@
 				611A34152D6107F200D19A53 /* LoadingView.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		615449222D628EC3002A92B6 /* FavoritesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6154492C2D629014002A92B6 /* Cell */,
+				615449252D628F43002A92B6 /* ViewModel */,
+				615449242D628F37002A92B6 /* View */,
+				615449232D628F2F002A92B6 /* ViewController */,
+			);
+			path = FavoritesScreen;
+			sourceTree = "<group>";
+		};
+		615449232D628F2F002A92B6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				615449262D628F9F002A92B6 /* FavoritesViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		615449242D628F37002A92B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				615449282D628FCE002A92B6 /* FavoritesScreenView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		615449252D628F43002A92B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6154492A2D628FE3002A92B6 /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6154492C2D629014002A92B6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6154492D2D629034002A92B6 /* FavoriteAPODTableViewCell.swift */,
+				6154492F2D6298C2002A92B6 /* FavoritesTableViewCellScreen.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		77A25A88A68DBA344A97E375 /* Frameworks */ = {
@@ -316,15 +371,18 @@
 			files = (
 				611A33FB2D5E73FD00D19A53 /* NetworkLayer.swift in Sources */,
 				611A33F72D5E73A900D19A53 /* NetworkLogger.swift in Sources */,
+				6154492E2D629034002A92B6 /* FavoriteAPODTableViewCell.swift in Sources */,
 				611A34042D5FAED700D19A53 /* APODService.swift in Sources */,
 				611A34002D5E751500D19A53 /* APODResponse.swift in Sources */,
 				611A34122D60D72B00D19A53 /* String+Extensions.swift in Sources */,
 				611A33F12D5E731700D19A53 /* Endpoint.swift in Sources */,
+				615449292D628FCE002A92B6 /* FavoritesScreenView.swift in Sources */,
 				611A33DA2D5E5F7600D19A53 /* APODViewController.swift in Sources */,
 				611A33FD2D5E742300D19A53 /* ServiceManager.swift in Sources */,
 				611A33D62D5E5F7600D19A53 /* AppDelegate.swift in Sources */,
 				611A33EC2D5E68BD00D19A53 /* APODScreenView.swift in Sources */,
 				611A33F32D5E734600D19A53 /* HTTPMethod.swift in Sources */,
+				6154492B2D628FE3002A92B6 /* FavoritesViewModel.swift in Sources */,
 				611A33F52D5E737800D19A53 /* DefaultRequestBuilder.swift in Sources */,
 				611A33EF2D5E72E600D19A53 /* RequestBuilder.swift in Sources */,
 				611A33D82D5E5F7600D19A53 /* SceneDelegate.swift in Sources */,
@@ -332,7 +390,9 @@
 				611A34102D60BE6800D19A53 /* APODTabBarController.swift in Sources */,
 				611A340B2D5FB04200D19A53 /* APODViewModel.swift in Sources */,
 				611A34162D6107F200D19A53 /* LoadingView.swift in Sources */,
+				615449272D628F9F002A92B6 /* FavoritesViewController.swift in Sources */,
 				611A33EA2D5E673300D19A53 /* ViewCode.swift in Sources */,
+				615449302D6298C2002A92B6 /* FavoritesTableViewCellScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

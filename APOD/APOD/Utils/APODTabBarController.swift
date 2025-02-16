@@ -22,7 +22,7 @@ class APODTabBarController: UITabBarController {
     }
 
     func createFavoritesNavigationController() -> UINavigationController {
-        let favoriteListVC = APODViewController()
+        let favoriteListVC = FavoritesViewController()
         favoriteListVC.title = "Favorites"
         favoriteListVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart.fill"), tag: 1)
         return UINavigationController(rootViewController: favoriteListVC)
