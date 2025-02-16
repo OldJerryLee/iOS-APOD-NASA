@@ -105,6 +105,11 @@ class APODScreenView: UIView {
         self.APODImageView.image = image
     }
     
+    func setupImageTemplate() {
+        self.APODImageView.contentMode = .center
+        self.APODImageView.image = UIImage(systemName: "camera.fill")
+    }
+    
     @objc private func didTapCalendarButton() {
         delegate?.didTapCalendarButton()
     }

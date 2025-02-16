@@ -36,6 +36,19 @@ final class APODViewModel {
         }
     }
     
+    public func fetchAPODByDate(date: String) {
+        service.getAPODByDate(date: date) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let response):
+                APODfetched = response
+                delegate?.success()
+            case .failure(let failure):
+                delegate?.error(message: failure.errorDescription ?? "")
+            }
+        }
+    }
+    
     public func getFormatedDate(dateString: String) -> String {
         return dateString.toFormattedDate()
     }

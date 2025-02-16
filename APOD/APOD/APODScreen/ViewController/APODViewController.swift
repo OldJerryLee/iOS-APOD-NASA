@@ -38,10 +38,6 @@ class APODViewController: UIViewController {
             return
         }
 
-        DispatchQueue.main.async {
-            self.APODScreen?.setupImage(image: UIImage(systemName: "photo.artframe")!)
-        }
-
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, let response = response, error == nil,
                   let image = UIImage(data: data) else { return }
@@ -62,7 +58,32 @@ extension APODViewController: APODScreenViewDelegate {
     }
     
     func didTapCalendarButton() {
-        print("TROCAR DATA")
+        let alert = UIAlertController(title: "Escolha uma data", message: "\n\n\n\n\n\n\n\n", preferredStyle: .actionSheet)
+        
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.maximumDate = Date()
+        datePicker.frame = CGRect(x: 10, y: 30, width: alert.view.bounds.width - 20, height: 200)
+        
+        alert.view.addSubview(datePicker)
+
+        let confirmAction = UIAlertAction(title: "OK", style: .default) { _ in
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            let selectedDate = formatter.string(from: datePicker.date)
+            self.APODScreen?.startPlaceholder()
+            self.APODScreen?.setupImageTemplate()
+            self.APODScreen?.showLoading()
+            self.viewModel.fetchAPODByDate(date: selectedDate)
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+
+        alert.addAction(confirmAction)
+        alert.addAction(cancelAction)
+
+        present(alert, animated: true, completion: nil)
     }
 }
 
