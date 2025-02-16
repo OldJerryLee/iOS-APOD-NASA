@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 protocol APODScreenViewDelegate: AnyObject {
     func didTapCalendarButton()
@@ -76,7 +77,26 @@ class APODScreenView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "camera.fill")
         imageView.tintColor = .apodLetters
+        //imageView.isHidden = true
         return imageView
+    }()
+    
+    private lazy var APODVideoView: YTPlayerView = {
+        let playerView = YTPlayerView()
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        playerView.backgroundColor = .black
+        playerView.isHidden = true
+        return playerView
+    }()
+    
+    private lazy var APODStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [APODImageView, APODVideoView])
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     private var loadingView: LoadingView?
@@ -96,10 +116,19 @@ class APODScreenView: UIView {
         self.delegate = delegate
     }
     
-    func setup(titleText: String, dateText: String, descriptionText: String) {
+    func setup(titleText: String, dateText: String, descriptionText: String, mediaType: String) {
         titleLabel.text = titleText
         dateLabel.text = dateText
         descriptionLabel.text = descriptionText
+        
+        if mediaType == "video" {
+            APODImageView.isHidden = true
+            APODVideoView.isHidden = false
+            APODVideoView.load(withVideoId: "OfM7VlonD5c", playerVars: ["playsinline":1])
+        } else {
+            APODImageView.isHidden = false
+            APODVideoView.isHidden = true
+        }
     }
     
     func setupImage(image: UIImage) {
@@ -161,7 +190,7 @@ extension APODScreenView: ViewCode {
         addSubview(favoriteButton)
         addSubview(titleLabel)
         addSubview(dateLabel)
-        addSubview(APODImageView)
+        addSubview(APODStackView)
         addSubview(descriptionLabel)
     }
     
@@ -185,12 +214,17 @@ extension APODScreenView: ViewCode {
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: self.dateLabel.leadingAnchor, constant: -8),
             
-            APODImageView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 8),
-            APODImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            APODImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            
+            
+            APODStackView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 8),
+            APODStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            APODStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+
             APODImageView.heightAnchor.constraint(equalToConstant: 400),
             
-            descriptionLabel.topAnchor.constraint(equalTo: self.APODImageView.bottomAnchor),
+            APODVideoView.heightAnchor.constraint(equalToConstant: 400),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: self.APODStackView.bottomAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
             descriptionLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -8)

@@ -102,13 +102,16 @@ extension APODViewController: APODViewModelProtocol {
         DispatchQueue.main.async { [weak self] in
             self?.APODScreen?.setup(titleText: self?.viewModel.APODfetched?.title ?? "",
                                     dateText: self?.viewModel.getFormatedDate(dateString: self?.viewModel.APODfetched?.date ?? "") ?? "",
-                                    descriptionText: self?.viewModel.APODfetched?.explanation ?? "")
+                                    descriptionText: self?.viewModel.APODfetched?.explanation ?? "",
+                                    mediaType: self?.viewModel.APODfetched?.mediaType ?? "")
             
             self?.APODScreen?.stopPlaceholder()
             self?.APODScreen?.hideLoading()
             
-            if let url = URL(string: self?.viewModel.APODfetched?.url ?? "") {
-                self?.downloadImage(from: url.absoluteURL)
+            if self?.viewModel.APODfetched?.mediaType == "image" {
+                if let url = URL(string: self?.viewModel.APODfetched?.url ?? "") {
+                    self?.downloadImage(from: url.absoluteURL)
+                }
             }
         }
     }
