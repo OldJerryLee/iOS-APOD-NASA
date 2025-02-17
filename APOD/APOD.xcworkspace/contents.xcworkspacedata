@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/CoreData/APODFavorite+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/CoreData/APODFavorite+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:APOD.xcodeproj">
    </FileRef>
    <FileRef

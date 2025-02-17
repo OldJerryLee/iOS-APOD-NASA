@@ -77,7 +77,6 @@ class APODScreenView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "camera.fill")
         imageView.tintColor = .apodLetters
-        //imageView.isHidden = true
         return imageView
     }()
     
@@ -138,6 +137,10 @@ class APODScreenView: UIView {
     func setupImageTemplate() {
         self.APODImageView.contentMode = .center
         self.APODImageView.image = UIImage(systemName: "camera.fill")
+    }
+    
+    func getCurrentImage() -> UIImage? {
+        return self.APODImageView.image
     }
     
     @objc private func didTapCalendarButton() {

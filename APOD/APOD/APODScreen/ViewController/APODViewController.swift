@@ -54,7 +54,22 @@ class APODViewController: UIViewController {
 
 extension APODViewController: APODScreenViewDelegate {
     func didTapFavoriteButton() {
-        print("FAVORITAR")
+        let alertController: UIAlertController = UIAlertController(title: "Favoritar", message: "Gostaria de favoritar esse APOD?", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Confirmar", style: .default) { [weak self] _ in
+            guard let currentAPOD = self?.viewModel.APODfetched else { return }
+            
+            self?.viewModel.saveAPOD(title: currentAPOD.title,
+                                     date: currentAPOD.date,
+                                     description: currentAPOD.explanation,
+                                     image: self?.APODScreen?.getCurrentImage(),
+                                     videoURL: currentAPOD.url,
+                                     mediaType: currentAPOD.mediaType)
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .destructive)
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
     
     func didTapCalendarButton() {

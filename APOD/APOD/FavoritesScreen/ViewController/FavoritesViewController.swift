@@ -19,7 +19,13 @@ final class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        favoriteScreen?.configTableViewProtocols(delegate: self, dataSource: self)
+        self.viewModel.delegate(delegate: self)
+        self.favoriteScreen?.configTableViewProtocols(delegate: self, dataSource: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel.loadFavorites()
     }
 }
 
@@ -31,19 +37,40 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.apods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteAPODTableViewCell.identifier, for: indexPath) as? FavoriteAPODTableViewCell
         
-        cell?.setupHomeCell(title: "Perijove 11: Passing Jupiter",
-                            date: "16/02/2025")
+        cell?.delegate(delegate: self)
+        
+        let favoriteItem = viewModel.apods[indexPath.row]
+        
+        cell?.setupHomeCell(title: favoriteItem.title ?? "",
+                            date: favoriteItem.date ?? "",
+                            isVideo: favoriteItem.mediaType == "video" ? true : false,
+                            imageData: favoriteItem.imageData)
 
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88
+        return 116
+    }
+}
+
+extension FavoritesViewController: FavoritesViewModelProtocol {
+    func updateViewController() {
+        DispatchQueue.main.async {
+            self.favoriteScreen?.favoritesTableView.reloadData()
+        }
+    }
+}
+
+extension FavoritesViewController: FFavoriteAPODTableViewCellProtocol {
+    func deleteFavoriteItem(in cell: FavoriteAPODTableViewCell) {
+        guard let indexPath = favoriteScreen?.favoritesTableView.indexPath(for: cell) else { return }
+        viewModel.deleteFavoriteAPOD(item: viewModel.apods[indexPath.row])
     }
 }
