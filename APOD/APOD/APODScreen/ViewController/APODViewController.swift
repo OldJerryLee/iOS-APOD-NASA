@@ -127,6 +127,10 @@ extension APODViewController: APODViewModelProtocol {
                 if let url = URL(string: self?.viewModel.APODfetched?.url ?? "") {
                     self?.downloadImage(from: url.absoluteURL)
                 }
+            } else {
+                if let url = URL(string: self?.viewModel.APODfetched?.thumb ?? "") {
+                    self?.downloadImage(from: url.absoluteURL)
+                }
             }
         }
     }

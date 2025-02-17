@@ -65,7 +65,7 @@ final class APODViewModel {
         coreDataManager.saveAPOD(title: title,
                                  date: date,
                                  description: description,
-                                 image: mediaType == "video" ? nil : image,
+                                 image: image,
                                  videoURL: videoURL,
                                  mediaType: mediaType)
         

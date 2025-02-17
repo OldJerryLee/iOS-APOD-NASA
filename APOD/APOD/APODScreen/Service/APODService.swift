@@ -9,7 +9,7 @@ import Foundation
 
 final class APODService {
     func getAPOD(completion: @escaping (Result<APODResponse,NetworkError>) -> Void) {
-        let urlString: String = "https://api.nasa.gov/planetary/apod?api_key=0LkAF0pB3OzKR35aMoxV6u1n61keu1hgY231CH4L"
+        let urlString: String = "https://api.nasa.gov/planetary/apod?api_key=0LkAF0pB3OzKR35aMoxV6u1n61keu1hgY231CH4L&thumbs=true"
         let endpoint = Endpoint(url: urlString,
                                 method: .get)
         
@@ -24,7 +24,7 @@ final class APODService {
     }
     
     func getAPODByDate(date: String, completion: @escaping (Result<APODResponse,NetworkError>) -> Void) {
-        let urlString: String = "https://api.nasa.gov/planetary/apod?api_key=0LkAF0pB3OzKR35aMoxV6u1n61keu1hgY231CH4L&date=\(date)"
+        let urlString: String = "https://api.nasa.gov/planetary/apod?api_key=0LkAF0pB3OzKR35aMoxV6u1n61keu1hgY231CH4L&date=\(date)&thumbs=true"
         let endpoint = Endpoint(url: urlString,
                                 method: .get)
         
