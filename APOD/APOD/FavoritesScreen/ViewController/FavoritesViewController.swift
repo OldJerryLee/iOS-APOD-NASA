@@ -70,7 +70,16 @@ extension FavoritesViewController: FavoritesViewModelProtocol {
 
 extension FavoritesViewController: FFavoriteAPODTableViewCellProtocol {
     func deleteFavoriteItem(in cell: FavoriteAPODTableViewCell) {
-        guard let indexPath = favoriteScreen?.favoritesTableView.indexPath(for: cell) else { return }
-        viewModel.deleteFavoriteAPOD(item: viewModel.apods[indexPath.row])
+
+        let alertController: UIAlertController = UIAlertController(title: "Deletar", message: "Gostaria de deletar esse APOD?", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Confirmar", style: .default) { [weak self] _ in
+            guard let indexPath = self?.favoriteScreen?.favoritesTableView.indexPath(for: cell) else { return }
+            guard let favorite = self?.viewModel.apods[indexPath.row] else { return }
+            self?.viewModel.deleteFavoriteAPOD(item: favorite)
+        }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .destructive)
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
 }
