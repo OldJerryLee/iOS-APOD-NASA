@@ -170,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				611A34082D5FAF8100D19A53 /* ViewController */,
-				611A34072D5FAF7700D19A53 /* View */,
 				611A34062D5FAF6A00D19A53 /* ViewModel */,
+				611A34072D5FAF7700D19A53 /* View */,
 				611A34052D5FAF6100D19A53 /* Service */,
 			);
 			path = APODScreen;
@@ -223,10 +223,10 @@
 		615449222D628EC3002A92B6 /* FavoritesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				6154492C2D629014002A92B6 /* Cell */,
+				615449232D628F2F002A92B6 /* ViewController */,
 				615449252D628F43002A92B6 /* ViewModel */,
 				615449242D628F37002A92B6 /* View */,
-				615449232D628F2F002A92B6 /* ViewController */,
+				6154492C2D629014002A92B6 /* Cell */,
 			);
 			path = FavoritesScreen;
 			sourceTree = "<group>";
@@ -277,9 +277,9 @@
 		61544A352D63FDF3002A92B6 /* FavoriteAPODScreen */ = {
 			isa = PBXGroup;
 			children = (
+				61544A362D63FE0F002A92B6 /* ViewController */,
 				61544A382D63FE1B002A92B6 /* ViewModel */,
 				61544A372D63FE16002A92B6 /* View */,
-				61544A362D63FE0F002A92B6 /* ViewController */,
 			);
 			path = FavoriteAPODScreen;
 			sourceTree = "<group>";

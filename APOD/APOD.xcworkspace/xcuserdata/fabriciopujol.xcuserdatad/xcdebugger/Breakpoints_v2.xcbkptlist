@@ -40,14 +40,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DF8E8A46-6B83-405B-B10A-48E141EDDD5A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APOD/APODScreen/ViewController/APODViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "success()"
             landmarkType = "7">
             <Locations>
@@ -81,6 +81,21 @@
                   endingLineNumber = "134"
                   offsetFromSymbolStart = "5204">
                </Location>
+               <Location
+                  uuid = "DF8E8A46-6B83-405B-B10A-48E141EDDD5A - b2912130f85000b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in APOD.APODViewController.success() -&gt; ()"
+                  moduleName = "APOD"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/APODScreen/ViewController/APODViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "5472">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,8 +109,8 @@
             filePath = "APOD/APODScreen/ViewController/APODViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "downloadImage(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -104,14 +119,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "66EBBEF2-5E13-46EA-AF4A-A1A46C4E1E05"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APOD/APODScreen/ViewController/APODViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "downloadImage(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -120,14 +135,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "178924C1-B7F6-4FF0-B696-05A48539D44B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APOD/APODScreen/ViewController/APODViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "downloadImage(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -136,32 +151,176 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E21AECE1-36EF-489A-A75D-7FD886503AB6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APOD/APODScreen/View/APODScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "setupImage(image:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E21AECE1-36EF-489A-A75D-7FD886503AB6 - 64e39444662819f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APOD.APODScreenView.setupImage(image: __C.UIImage) -&gt; ()"
+                  moduleName = "APOD"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/APODScreen/View/APODScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "E21AECE1-36EF-489A-A75D-7FD886503AB6 - 64e3944466281acc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APOD.APODScreenView.setupImage(image: __C.UIImage) -&gt; ()"
+                  moduleName = "APOD"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/APODScreen/View/APODScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E73E055D-A88C-4C6A-AFE4-A7E9B160B127"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APOD/APODScreen/View/APODScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "getCurrentImage()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E73E055D-A88C-4C6A-AFE4-A7E9B160B127 - 25b480f9f313987a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APOD.APODScreenView.getCurrentImage() -&gt; Swift.Optional&lt;__C.UIImage&gt;"
+                  moduleName = "APOD"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/APODScreen/View/APODScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "E73E055D-A88C-4C6A-AFE4-A7E9B160B127 - 25b480f9f3139972"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APOD.APODScreenView.getCurrentImage() -&gt; Swift.Optional&lt;__C.UIImage&gt;"
+                  moduleName = "APOD"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/APODScreen/View/APODScreenView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "333D6C2C-716A-4080-BC6B-23D178678DCB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APOD/APODScreen/ViewModel/APODViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "isAPODFavorite()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6D95C3B-5E7A-428A-9534-01BDE77D38E8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APOD/APODScreen/ViewController/APODViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "success()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA030A3E-7955-43D9-AFD6-A8F8C5452BC3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APOD/APODScreen/ViewModel/APODViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "isAPODFavorite()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BA030A3E-7955-43D9-AFD6-A8F8C5452BC3 - 21bd8ba2146ab4ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APOD.APODViewModel.isAPODFavorite() -&gt; Swift.Bool"
+                  moduleName = "APOD"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/APODScreen/ViewModel/APODViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "BA030A3E-7955-43D9-AFD6-A8F8C5452BC3 - da035ee384a5ebd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (APOD.APODFavorite) -&gt; Swift.Bool in APOD.APODViewModel.isAPODFavorite() -&gt; Swift.Bool"
+                  moduleName = "APOD"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/APODScreen/ViewModel/APODViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -24,7 +24,14 @@ class APODViewController: UIViewController {
         self.APODScreen?.delegate(delegate: self)
         self.APODScreen?.startPlaceholder()
         self.APODScreen?.showLoading()
-        viewModel.fetchAPOD()
+        self.viewModel.fetchAPOD()
+        self.viewModel.loadFavorites()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel.loadFavorites()
+        self.APODScreen?.setupFavoriteButtonImage(isFavorite: self.viewModel.isAPODFavorite())
     }
     
     private func downloadImage(from url: URL) {
@@ -54,22 +61,38 @@ class APODViewController: UIViewController {
 
 extension APODViewController: APODScreenViewDelegate {
     func didTapFavoriteButton() {
-        let alertController: UIAlertController = UIAlertController(title: "Favoritar", message: "Gostaria de favoritar esse APOD?", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Confirmar", style: .default) { [weak self] _ in
-            guard let currentAPOD = self?.viewModel.APODfetched else { return }
-            
-            self?.viewModel.saveAPOD(title: currentAPOD.title,
-                                     date: currentAPOD.date,
-                                     description: currentAPOD.explanation,
-                                     image: self?.APODScreen?.getCurrentImage(),
-                                     videoURL: currentAPOD.url,
-                                     mediaType: currentAPOD.mediaType)
-            
+        
+        if self.viewModel.isAPODFavorite() {
+            let alertController: UIAlertController = UIAlertController(title: "Desfavoritar", message: "Gostaria de desfavoritar esse APOD?", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Confirmar", style: .default) { [weak self] _ in
+                guard let currentFavoriteAPOD = self?.viewModel.getCurrentAPODFromFavorites() else { return }
+                self?.viewModel.deleteAPOD(item: currentFavoriteAPOD)
+                self?.APODScreen?.setupFavoriteButtonImage(isFavorite: self?.viewModel.isAPODFavorite() ?? false)
+            }
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .destructive)
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            present(alertController, animated: true)
+        } else {
+            let alertController: UIAlertController = UIAlertController(title: "Favoritar", message: "Gostaria de favoritar esse APOD?", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Confirmar", style: .default) { [weak self] _ in
+                guard let currentAPOD = self?.viewModel.APODfetched else { return }
+                
+                self?.viewModel.saveAPOD(title: currentAPOD.title,
+                                         date: currentAPOD.date,
+                                         description: currentAPOD.explanation,
+                                         image: self?.APODScreen?.getCurrentImage(),
+                                         videoURL: currentAPOD.url,
+                                         mediaType: currentAPOD.mediaType)
+                
+                self?.APODScreen?.setupFavoriteButtonImage(isFavorite: self?.viewModel.isAPODFavorite() ?? false)
+                
+            }
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .destructive)
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            present(alertController, animated: true)
         }
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .destructive)
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true)
     }
     
     func didTapCalendarButton() {
@@ -121,7 +144,9 @@ extension APODViewController: APODViewModelProtocol {
             self?.APODScreen?.setup(titleText: self?.viewModel.APODfetched?.title ?? "",
                                     dateText: self?.viewModel.getFormatedDate(dateString: self?.viewModel.APODfetched?.date ?? "") ?? "",
                                     descriptionText: self?.viewModel.APODfetched?.explanation ?? "",
-                                    mediaType: self?.viewModel.APODfetched?.mediaType ?? "", videoId: videoId)
+                                    mediaType: self?.viewModel.APODfetched?.mediaType ?? "", 
+                                    videoId: videoId, 
+                                    isFavorite: self?.viewModel.isAPODFavorite() ?? false)
             
             self?.APODScreen?.stopPlaceholder()
             self?.APODScreen?.hideLoading()

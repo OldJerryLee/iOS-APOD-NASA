@@ -86,4 +86,21 @@ final class APODViewModel {
         
         loadFavorites()
     }
+    
+    public func deleteAPOD(item: APODFavorite) {
+        coreDataManager.deleteAPOD(apod: item)
+        loadFavorites()
+    }
+    
+    public func isAPODFavorite() -> Bool {
+        return apods.contains {
+            $0.title == APODfetched?.title
+        }
+    }
+    
+    public func getCurrentAPODFromFavorites() -> APODFavorite? {
+        return apods.first {
+            $0.title == APODfetched?.title
+        }
+    }
 }

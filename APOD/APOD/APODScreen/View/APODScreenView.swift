@@ -114,7 +114,7 @@ class APODScreenView: UIView {
         self.delegate = delegate
     }
     
-    func setup(titleText: String, dateText: String, descriptionText: String, mediaType: String, videoId: String?) {
+    func setup(titleText: String, dateText: String, descriptionText: String, mediaType: String, videoId: String?, isFavorite: Bool) {
         titleLabel.text = titleText
         dateLabel.text = dateText
         descriptionLabel.text = descriptionText
@@ -126,6 +126,18 @@ class APODScreenView: UIView {
         } else {
             APODImageView.isHidden = false
             APODVideoView.isHidden = true
+        }
+        
+        setupFavoriteButtonImage(isFavorite: isFavorite)
+    }
+    
+    func setupFavoriteButtonImage(isFavorite: Bool) {
+        if isFavorite {
+            let image = UIImage(systemName: "heart.fill")?.withRenderingMode(.alwaysTemplate)
+            favoriteButton.setImage(image, for: .normal)
+        } else {
+            let image = UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate)
+            favoriteButton.setImage(image, for: .normal)
         }
     }
     
