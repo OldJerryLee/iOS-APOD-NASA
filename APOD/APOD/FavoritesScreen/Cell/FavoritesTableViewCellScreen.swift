@@ -14,8 +14,10 @@ final class FavoritesTableViewCellScreen: UIView {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "camera")?.withRenderingMode(.alwaysTemplate)
         image.tintColor = .apodLetters
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
         image.backgroundColor = .apodLetters
+        image.layer.cornerRadius = 8
         return image
     }()
     
@@ -82,8 +84,8 @@ final class FavoritesTableViewCellScreen: UIView {
         NSLayoutConstraint.activate([
             favoriteAPODImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             favoriteAPODImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            favoriteAPODImage.heightAnchor.constraint(equalToConstant: 48),
-            favoriteAPODImage.widthAnchor.constraint(equalToConstant: 48),
+            favoriteAPODImage.heightAnchor.constraint(equalToConstant: 100),
+            favoriteAPODImage.widthAnchor.constraint(equalToConstant: 80),
             
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: favoriteAPODImage.trailingAnchor, constant: 16),

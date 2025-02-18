@@ -41,6 +41,7 @@ class APODViewController: UIViewController {
            let image = UIImage(data: cachedResponse.data) {
             DispatchQueue.main.async {
                 self.APODScreen?.setupImage(image: image)
+                self.APODScreen?.hideLoading()
             }
             return
         }
@@ -54,6 +55,7 @@ class APODViewController: UIViewController {
 
             DispatchQueue.main.async {
                 self.APODScreen?.setupImage(image: image)
+                self.APODScreen?.hideLoading()
             }
         }.resume()
     }
@@ -149,7 +151,6 @@ extension APODViewController: APODViewModelProtocol {
                                     isFavorite: self?.viewModel.isAPODFavorite() ?? false)
             
             self?.APODScreen?.stopPlaceholder()
-            self?.APODScreen?.hideLoading()
             
             if self?.viewModel.APODfetched?.mediaType == "image" {
                 if let url = URL(string: self?.viewModel.APODfetched?.url ?? "") {

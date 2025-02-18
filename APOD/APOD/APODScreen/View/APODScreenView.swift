@@ -77,6 +77,7 @@ class APODScreenView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "camera.fill")
         imageView.tintColor = .apodLetters
+        imageView.clipsToBounds = true
         return imageView
     }()
     
