@@ -8,7 +8,13 @@
 import CoreData
 import UIKit
 
-class CoreDataManager {
+protocol CoreDataManagerProtocol {
+    func saveAPOD(title: String, date: String, description: String, image: UIImage?, videoURL: String?, mediaType: String)
+    func fetchAPODs() -> [APODFavorite]
+    func deleteAPOD(apod: APODFavorite)
+}
+
+class CoreDataManager: CoreDataManagerProtocol {
     static let shared = CoreDataManager()
     
     private let persistentContainer: NSPersistentContainer

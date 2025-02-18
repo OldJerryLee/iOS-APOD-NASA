@@ -10,7 +10,8 @@ import UIKit
 class APODViewController: UIViewController {
     
     private var APODScreen: APODScreenView?
-    private let viewModel: APODViewModel = APODViewModel()
+    private let viewModel: APODViewModel = APODViewModel(service: APODService(),
+                                                         coreDataManager: CoreDataManager.shared)
     
     override func loadView() {
         super.loadView()

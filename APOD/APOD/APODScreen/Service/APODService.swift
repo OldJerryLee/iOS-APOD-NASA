@@ -7,7 +7,12 @@
 
 import Foundation
 
-final class APODService {
+protocol APODServiceProtocol: AnyObject {
+    func getAPOD(completion: @escaping (Result<APODResponse,NetworkError>) -> Void)
+    func getAPODByDate(date: String, completion: @escaping (Result<APODResponse,NetworkError>) -> Void)
+}
+
+final class APODService: APODServiceProtocol {
     func getAPOD(completion: @escaping (Result<APODResponse,NetworkError>) -> Void) {
         let urlString: String = "https://api.nasa.gov/planetary/apod?api_key=0LkAF0pB3OzKR35aMoxV6u1n61keu1hgY231CH4L&thumbs=true"
         let endpoint = Endpoint(url: urlString,

@@ -14,12 +14,17 @@ protocol APODViewModelProtocol: AnyObject {
 
 final class APODViewModel {
     
-    private var service: APODService = APODService()
-    private let coreDataManager = CoreDataManager.shared
+    private var service: APODServiceProtocol
+    private var coreDataManager: CoreDataManagerProtocol
     private weak var delegate: APODViewModelProtocol?
     
     public var APODfetched: APODResponse?
     private(set) var apods: [APODFavorite] = []
+    
+    init(service: APODServiceProtocol, coreDataManager: CoreDataManagerProtocol) {
+        self.coreDataManager = coreDataManager
+        self.service = service
+    }
     
     public func delegate(delegate: APODViewModelProtocol?) {
         self.delegate = delegate
