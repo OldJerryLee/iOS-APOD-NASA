@@ -114,7 +114,7 @@ class APODScreenView: UIView {
         self.delegate = delegate
     }
     
-    func setup(titleText: String, dateText: String, descriptionText: String, mediaType: String) {
+    func setup(titleText: String, dateText: String, descriptionText: String, mediaType: String, videoId: String?) {
         titleLabel.text = titleText
         dateLabel.text = dateText
         descriptionLabel.text = descriptionText
@@ -122,7 +122,7 @@ class APODScreenView: UIView {
         if mediaType == "video" {
             APODImageView.isHidden = true
             APODVideoView.isHidden = false
-            APODVideoView.load(withVideoId: "OfM7VlonD5c", playerVars: ["playsinline":1])
+            APODVideoView.load(withVideoId: videoId ?? "", playerVars: ["playsinline":1])
         } else {
             APODImageView.isHidden = false
             APODVideoView.isHidden = true

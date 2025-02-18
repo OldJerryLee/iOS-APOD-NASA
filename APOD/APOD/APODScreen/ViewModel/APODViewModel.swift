@@ -55,12 +55,27 @@ final class APODViewModel {
         return dateString.toFormattedDate()
     }
     
-    func loadFavorites() {
+    public func extractYouTubeVideoID(from url: String) -> String? {
+        let pattern = "(?:youtu\\.be/|youtube\\.com/(?:embed/|v/|watch\\?v=|.*[?&]v=))([a-zA-Z0-9_-]{11})"
+        
+        if let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive) {
+            let nsString = url as NSString
+            let results = regex.firstMatch(in: url, options: [], range: NSRange(location: 0, length: nsString.length))
+            
+            if let range = results?.range(at: 1) {
+                return nsString.substring(with: range)
+            }
+        }
+        
+        return nil
+    }
+    
+    public func loadFavorites() {
         apods = coreDataManager.fetchAPODs()
         print(apods)
     }
     
-    func saveAPOD(title: String, date: String, description: String, image: UIImage?, videoURL: String?, mediaType: String) {
+    public func saveAPOD(title: String, date: String, description: String, image: UIImage?, videoURL: String?, mediaType: String) {
         
         coreDataManager.saveAPOD(title: title,
                                  date: date,

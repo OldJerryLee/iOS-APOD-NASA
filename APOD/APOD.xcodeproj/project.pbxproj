@@ -37,6 +37,9 @@
 		61544A2B2D63665E002A92B6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61544A2A2D63665E002A92B6 /* CoreDataManager.swift */; };
 		61544A322D63757A002A92B6 /* APODFavorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61544A312D63757A002A92B6 /* APODFavorite+CoreDataProperties.swift */; };
 		61544A342D63757B002A92B6 /* APODFavorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61544A332D63757B002A92B6 /* APODFavorite+CoreDataClass.swift */; };
+		61544A3A2D63FEF9002A92B6 /* FavoriteAPODViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61544A392D63FEF9002A92B6 /* FavoriteAPODViewController.swift */; };
+		61544A3C2D63FF1B002A92B6 /* FavoriteAPODScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61544A3B2D63FF1B002A92B6 /* FavoriteAPODScreen.swift */; };
+		61544A3E2D641A69002A92B6 /* FavoriteAPODViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61544A3D2D641A69002A92B6 /* FavoriteAPODViewModel.swift */; };
 		EAF856B35FB370EBD8316D7C /* Pods_APOD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574AA0046AA52F75F2981601 /* Pods_APOD.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,9 @@
 		61544A2A2D63665E002A92B6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		61544A312D63757A002A92B6 /* APODFavorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "APODFavorite+CoreDataProperties.swift"; path = "/Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/CoreData/APODFavorite+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		61544A332D63757B002A92B6 /* APODFavorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "APODFavorite+CoreDataClass.swift"; path = "/Users/fabriciopujol/Desktop/APOD/iOS-APOD-NASA/APOD/APOD/CoreData/APODFavorite+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		61544A392D63FEF9002A92B6 /* FavoriteAPODViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAPODViewController.swift; sourceTree = "<group>"; };
+		61544A3B2D63FF1B002A92B6 /* FavoriteAPODScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAPODScreen.swift; sourceTree = "<group>"; };
+		61544A3D2D641A69002A92B6 /* FavoriteAPODViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAPODViewModel.swift; sourceTree = "<group>"; };
 		93735CB33E99B323E502FE62 /* Pods-APOD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APOD.debug.xcconfig"; path = "Target Support Files/Pods-APOD/Pods-APOD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,10 +126,11 @@
 		611A33D42D5E5F7600D19A53 /* APOD */ = {
 			isa = PBXGroup;
 			children = (
-				61544A292D63664B002A92B6 /* CoreData */,
-				615449222D628EC3002A92B6 /* FavoritesScreen */,
-				611A34092D5FAF9500D19A53 /* Utils */,
 				611A34012D5E77DE00D19A53 /* APODScreen */,
+				615449222D628EC3002A92B6 /* FavoritesScreen */,
+				61544A352D63FDF3002A92B6 /* FavoriteAPODScreen */,
+				61544A292D63664B002A92B6 /* CoreData */,
+				611A34092D5FAF9500D19A53 /* Utils */,
 				611A33FE2D5E74F000D19A53 /* Model */,
 				611A33ED2D5E726400D19A53 /* Service */,
 				611A33D52D5E5F7600D19A53 /* AppDelegate.swift */,
@@ -267,6 +274,40 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		61544A352D63FDF3002A92B6 /* FavoriteAPODScreen */ = {
+			isa = PBXGroup;
+			children = (
+				61544A382D63FE1B002A92B6 /* ViewModel */,
+				61544A372D63FE16002A92B6 /* View */,
+				61544A362D63FE0F002A92B6 /* ViewController */,
+			);
+			path = FavoriteAPODScreen;
+			sourceTree = "<group>";
+		};
+		61544A362D63FE0F002A92B6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				61544A392D63FEF9002A92B6 /* FavoriteAPODViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		61544A372D63FE16002A92B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61544A3B2D63FF1B002A92B6 /* FavoriteAPODScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61544A382D63FE1B002A92B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				61544A3D2D641A69002A92B6 /* FavoriteAPODViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		77A25A88A68DBA344A97E375 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +433,7 @@
 				611A33FB2D5E73FD00D19A53 /* NetworkLayer.swift in Sources */,
 				611A33F72D5E73A900D19A53 /* NetworkLogger.swift in Sources */,
 				61544A342D63757B002A92B6 /* APODFavorite+CoreDataClass.swift in Sources */,
+				61544A3E2D641A69002A92B6 /* FavoriteAPODViewModel.swift in Sources */,
 				61544A322D63757A002A92B6 /* APODFavorite+CoreDataProperties.swift in Sources */,
 				6154492E2D629034002A92B6 /* FavoriteAPODTableViewCell.swift in Sources */,
 				611A34042D5FAED700D19A53 /* APODService.swift in Sources */,
@@ -401,6 +443,7 @@
 				611A33F12D5E731700D19A53 /* Endpoint.swift in Sources */,
 				615449292D628FCE002A92B6 /* FavoritesScreenView.swift in Sources */,
 				611A33DA2D5E5F7600D19A53 /* APODViewController.swift in Sources */,
+				61544A3A2D63FEF9002A92B6 /* FavoriteAPODViewController.swift in Sources */,
 				611A33FD2D5E742300D19A53 /* ServiceManager.swift in Sources */,
 				611A33D62D5E5F7600D19A53 /* AppDelegate.swift in Sources */,
 				611A33EC2D5E68BD00D19A53 /* APODScreenView.swift in Sources */,
@@ -413,6 +456,7 @@
 				611A34102D60BE6800D19A53 /* APODTabBarController.swift in Sources */,
 				61544A2B2D63665E002A92B6 /* CoreDataManager.swift in Sources */,
 				611A340B2D5FB04200D19A53 /* APODViewModel.swift in Sources */,
+				61544A3C2D63FF1B002A92B6 /* FavoriteAPODScreen.swift in Sources */,
 				611A34162D6107F200D19A53 /* LoadingView.swift in Sources */,
 				615449272D628F9F002A92B6 /* FavoritesViewController.swift in Sources */,
 				611A33EA2D5E673300D19A53 /* ViewCode.swift in Sources */,

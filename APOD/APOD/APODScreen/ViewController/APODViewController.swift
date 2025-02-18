@@ -115,10 +115,13 @@ extension APODViewController: APODViewModelProtocol {
     
     func success() {
         DispatchQueue.main.async { [weak self] in
+            
+            let videoId = self?.viewModel.extractYouTubeVideoID(from: self?.viewModel.APODfetched?.url ?? "")
+            
             self?.APODScreen?.setup(titleText: self?.viewModel.APODfetched?.title ?? "",
                                     dateText: self?.viewModel.getFormatedDate(dateString: self?.viewModel.APODfetched?.date ?? "") ?? "",
                                     descriptionText: self?.viewModel.APODfetched?.explanation ?? "",
-                                    mediaType: self?.viewModel.APODfetched?.mediaType ?? "")
+                                    mediaType: self?.viewModel.APODfetched?.mediaType ?? "", videoId: videoId)
             
             self?.APODScreen?.stopPlaceholder()
             self?.APODScreen?.hideLoading()

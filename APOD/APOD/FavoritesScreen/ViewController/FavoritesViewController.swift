@@ -8,7 +8,7 @@
 import UIKit
 
 final class FavoritesViewController: UIViewController {
-
+    
     private var favoriteScreen: FavoritesScreenView?
     private let viewModel: FavoritesViewModel = FavoritesViewModel()
     
@@ -16,7 +16,7 @@ final class FavoritesViewController: UIViewController {
         self.favoriteScreen = FavoritesScreenView()
         self.view = self.favoriteScreen
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.delegate(delegate: self)
@@ -33,7 +33,11 @@ final class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let favoriteAPODItem = self.viewModel.apods[indexPath.row]
+        let viewModel = FavoriteAPODViewModel(favoriteAPODItem: favoriteAPODItem)
+        let viewController = FavoriteAPODViewController(viewModel: viewModel)
         
+        self.present(viewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +55,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
                             date: favoriteItem.date ?? "",
                             isVideo: favoriteItem.mediaType == "video" ? true : false,
                             imageData: favoriteItem.imageData)
-
+        
         return cell ?? UITableViewCell()
     }
     
@@ -70,7 +74,7 @@ extension FavoritesViewController: FavoritesViewModelProtocol {
 
 extension FavoritesViewController: FFavoriteAPODTableViewCellProtocol {
     func deleteFavoriteItem(in cell: FavoriteAPODTableViewCell) {
-
+        
         let alertController: UIAlertController = UIAlertController(title: "Deletar", message: "Gostaria de deletar esse APOD?", preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Confirmar", style: .default) { [weak self] _ in
             guard let indexPath = self?.favoriteScreen?.favoritesTableView.indexPath(for: cell) else { return }
