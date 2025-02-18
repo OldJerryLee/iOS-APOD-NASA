@@ -98,6 +98,8 @@ final class FavoritesTableViewCellScreen: UIView {
             mediaTypeImage.leadingAnchor.constraint(equalTo: favoriteAPODImage.trailingAnchor, constant: 16),
             
             deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            deleteButton.heightAnchor.constraint(equalToConstant: 32),
+            deleteButton.widthAnchor.constraint(equalToConstant: 32),
             deleteButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }

@@ -32,4 +32,8 @@ final class FavoriteAPODViewModel {
         
         return nil
     }
+    
+    public func getFormatedDate(dateString: String) -> String {
+        return dateString.toFormattedDate()
+    }
 }

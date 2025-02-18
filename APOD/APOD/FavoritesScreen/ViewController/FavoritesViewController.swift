@@ -51,8 +51,10 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         
         let favoriteItem = viewModel.apods[indexPath.row]
         
+        let formattedDate = viewModel.getFormatedDate(dateString: favoriteItem.date ?? "")
+        
         cell?.setupHomeCell(title: favoriteItem.title ?? "",
-                            date: favoriteItem.date ?? "",
+                            date: formattedDate,
                             isVideo: favoriteItem.mediaType == "video" ? true : false,
                             imageData: favoriteItem.imageData)
         

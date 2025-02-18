@@ -31,4 +31,8 @@ final class FavoritesViewModel {
         coreDataManager.deleteAPOD(apod: item)
         loadFavorites()
     }
+    
+    public func getFormatedDate(dateString: String) -> String {
+        return dateString.toFormattedDate()
+    }
 }

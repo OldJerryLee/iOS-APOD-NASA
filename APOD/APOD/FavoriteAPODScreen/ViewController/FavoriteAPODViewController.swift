@@ -34,8 +34,10 @@ class FavoriteAPODViewController: UIViewController {
         
         let videoId = viewModel.extractYouTubeVideoID(from: favoriteItem.videoURL ?? "")
         
+        let formattedDate = viewModel.getFormatedDate(dateString: favoriteItem.date ?? "")
+        
         self.favoriteAPODScreen?.setup(titleText: favoriteItem.title ?? "",
-                                       dateText: favoriteItem.date ?? "",
+                                       dateText: formattedDate,
                                        descriptionText: favoriteItem.explanation ?? "",
                                        mediaType: favoriteItem.mediaType ?? "",
                                        videoId: videoId,
