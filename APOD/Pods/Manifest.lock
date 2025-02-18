@@ -1,16 +1,32 @@
 PODS:
+  - OHHTTPStubs/Core (9.1.0)
+  - OHHTTPStubs/Default (9.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.1.0)
+  - OHHTTPStubs/Swift (9.1.0):
+    - OHHTTPStubs/Default
   - youtube-ios-player-helper (1.0.4)
 
 DEPENDENCIES:
+  - OHHTTPStubs/Swift
   - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
+    - OHHTTPStubs
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
+  OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: fdffde5a1535bb220fa06b479766f126237e94ed
+PODFILE CHECKSUM: 95041d0de457a9b42b0f58d8cdf192caa144cdb9
 
 COCOAPODS: 1.13.0
